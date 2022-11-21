@@ -1,0 +1,198 @@
+
+:root {
+    --font_size_h2-section-sub-header: 1.9rem;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    margin: 40px 40px;
+    font-family: 'Cairo', sans-serif;
+    color: #141619;
+}
+
+h2 {
+    font-size: 1.9rem;
+    font-weight: 600;
+    line-height: 2.4rem;
+}
+
+h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    line-height: 1.9rem;
+}
+
+h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    line-height: 1.5rem;
+}
+
+p {
+    font-size: 0.75rem;
+    font-weight: 400;
+    line-height: 1.1rem;
+}
+
+.wrapper {
+    max-width: 1000px;
+}
+
+/*Userlist-topbar START*/
+.userlist-topbar {
+    max-width: 50.1rem;
+    background-color: #F5F6FF;
+    border-radius: 6px;
+    box-shadow: 0px 6px rgba(0, 0, 0, 0.05);
+    padding: 1rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    line-height: 1rem;
+    letter-spacing: 7%;
+    text-transform: uppercase;
+
+}
+.nav-links {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1.1rem;
+    list-style-type: none;
+}
+
+.nav-links li {
+    padding-right: 1rem;
+    border-right: 1px solid rgba(20, 22, 25, 0.08);
+}
+
+.nav-links li:last-child {
+    border: none;
+}
+
+.nav-links--active {
+    font-weight: 800;
+}
+/*Userlist-topbar END*/
+
+/*Lesson-header START*/
+.lesson-header {
+    margin-top: 2rem; /*för att få avstånd till componenten ovanför*/
+    max-width: 48rem;
+    background-color: #E6EBF3;
+    display: flex;
+    gap: 3.9rem;
+    padding: 1rem 1rem 2rem 1rem;
+    border-radius: 6px;
+}
+
+.lesson-header__module h2 {
+    border-bottom: 2px solid #141619;
+    width: 2rem;
+}
+
+.lesson-header__module h3 {
+    /* flex-shrink: 0; */
+    margin-top: 0.5rem; /*Avstånd till h2*/
+}
+
+.ordered-list {
+    font-size: 1rem;
+    line-height: 1.6rem;
+    list-style-type: none;
+    padding-left: 0; /*För att få bort indentering*/
+    margin-top: 1rem; /*avstånd upp till h2*/
+    gap: 1rem;
+}
+
+.ordered-list span {
+    background-color: rgba(243, 245, 246, 0.94);
+    padding: 0 0.5rem; /*för mer bakgrund*/
+    margin-right: 1rem; /*tab till texten*/
+}
+/*Lesson-header END*/
+
+/*Self assessment START*/
+
+.self-assessment {
+    max-width: 32.8rem;
+    display: flex;
+    justify-content: stretch;
+    border: 1px solid rgba(20, 22, 25, 0.8);
+    border-radius: 4px;
+    margin-top: 2rem;
+}
+
+.self-assessment div {
+    width: 8.2rem;
+    border: 1px solid rgba(20, 22, 25, 0.8);
+    padding: 0.5rem 1rem;
+    text-align: center; 
+}
+
+.self-assessment .active{
+    background-color: rgba(20, 22, 25, 0.8);
+    color: white;
+}
+/*Self assessment END*/
+
+/*Link START*/
+
+.link {
+    width: 33rem;
+    background-color: rgba(20, 22, 25, 0.08);
+    border-radius: 4px;
+    padding: 0.6rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.8rem;
+    margin-top: 2rem;
+}
+
+.link a {
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 400;
+    line-height: 1.3rem;
+    color: #141619;
+}
+/*Link END*/
+
+/*Course card START*/
+
+.course-card {
+    max-width: 15.3rem;
+    background-color: #F5F6FF;
+    display: flex;
+    flex-direction: column;
+}
+.course-card__figure {
+    width: 100%;
+    height: 12.5rem;
+    background-color: #666A73;
+    border-radius: 0.5rem;
+}
+
+.option {
+    font-weight: 600;
+    background-color: rgba(20, 22, 25, 0.08);
+    padding: 4px 0;
+}
+.course-card__list {
+    width: 13.3rem;
+    border: 1px solid rgba(20, 22, 25, 0.08);
+    border-radius: 6px;
+    align-self: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    margin-bottom: 1rem;
+}
+
+/*Course card END*/
