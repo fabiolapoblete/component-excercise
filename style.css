@@ -1,7 +1,16 @@
-
 :root {
-    --font_size_h2-section-sub-header: 1.9rem;
+    --primary-text-dark_color: #141619;
+    --primary-text-light_color: rgba(243, 245, 246, 0.94);
+    --secondary-text-dark_color: rgba(20, 22, 25, 0.72);
+    --secondary-text-light_color: rgba(243, 245, 246, 0.72);
+    --shade-dark-80_color: rgba(20, 22, 25, 0.8);
+    --shade-dark-8_color: rgba(20, 22, 25, 0.08);
+    --foreground-layer-neutral_color: #666A73;
+    --foreground-layer-light_color: #F5F6FF;
+    --container-layer-ash: #E6EBF3;
+    --accent-red_color: #EA4848;
 }
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -10,43 +19,41 @@
 body {
     width: 100vw;
     height: 100vh;
-    margin: 40px 40px;
     font-family: 'Cairo', sans-serif;
-    color: #141619;
+    color: var(--primary-text-dark_color);
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
 }
 
-h2 {
+h2 { /*Section sub header*/
     font-size: 1.9rem;
     font-weight: 600;
     line-height: 2.4rem;
 }
 
-h3 {
+h3 { /*header*/
     font-size: 1.4rem;
     font-weight: 600;
     line-height: 1.9rem;
 }
 
-h4 {
+h4 { /*Card header*/
     font-size: 1.1rem;
     font-weight: 600;
     line-height: 1.5rem;
 }
 
-p {
+p { /*Card p*/
     font-size: 0.75rem;
-    font-weight: 400;
+    font-weight: 600;
     line-height: 1.1rem;
 }
 
-.wrapper {
-    max-width: 1000px;
-}
-
-/*Userlist-topbar START*/
+/*Start - userlist-topbar*/
 .userlist-topbar {
     max-width: 50.1rem;
-    background-color: #F5F6FF;
+    background-color: var(--foreground-layer-light_color);
     border-radius: 6px;
     box-shadow: 0px 6px rgba(0, 0, 0, 0.05);
     padding: 1rem;
@@ -55,19 +62,18 @@ p {
     line-height: 1rem;
     letter-spacing: 7%;
     text-transform: uppercase;
-
 }
+
 .nav-links {
     display: flex;
     justify-content: flex-end;
-    align-items: center;
     gap: 1.1rem;
     list-style-type: none;
 }
 
 .nav-links li {
     padding-right: 1rem;
-    border-right: 1px solid rgba(20, 22, 25, 0.08);
+    border-right: 1px solid var(--shade-dark-8_color);
 }
 
 .nav-links li:last-child {
@@ -77,165 +83,177 @@ p {
 .nav-links--active {
     font-weight: 800;
 }
-/*Userlist-topbar END*/
+/*END - userlist-topbar*/
 
-/*Lesson-header START*/
+/*Start - lesson-header*/
+
 .lesson-header {
-    margin-top: 2rem; /*för att få avstånd till componenten ovanför*/
     max-width: 48rem;
-    background-color: #E6EBF3;
+    background-color: var(--container-layer-ash);
+    border-radius: 6px;
+    padding: 1rem 1rem 2rem 1rem;
     display: flex;
     gap: 3.9rem;
-    padding: 1rem 1rem 2rem 1rem;
-    border-radius: 6px;
 }
 
 .lesson-header__module h2 {
-    border-bottom: 2px solid #141619;
+    border-bottom: 2px solid var(--primary-text-dark_color);
     width: 2rem;
+    margin-bottom: 0.5rem;
 }
 
-.lesson-header__module h3 {
-    /* flex-shrink: 0; */
-    margin-top: 0.5rem; /*Avstånd till h2*/
-}
-
-.ordered-list {
-    font-size: 1rem;
-    line-height: 1.6rem;
+.lesson-header__overview__items {
     list-style-type: none;
-    padding-left: 0; /*För att få bort indentering*/
-    margin-top: 1rem; /*avstånd upp till h2*/
-    gap: 1rem;
-}
-
-.ordered-list span {
-    background-color: rgba(243, 245, 246, 0.94);
-    padding: 0 0.5rem; /*för mer bakgrund*/
-    margin-right: 1rem; /*tab till texten*/
-}
-/*Lesson-header END*/
-
-/*Self assessment START*/
-
-.self-assessment {
-    max-width: 32.8rem;
+    padding-left: 0; /*no indent*/
+    line-height: 1.6rem;
+    margin-top: 1rem; /*distance to header*/
     display: flex;
-    justify-content: stretch;
-    border: 1px solid rgba(20, 22, 25, 0.8);
-    border-radius: 4px;
-    margin-top: 2rem;
+    flex-direction: column;
+    gap: 1rem; /*distance between list items*/
 }
 
-.self-assessment div {
-    width: 8.2rem;
-    border: 1px solid rgba(20, 22, 25, 0.8);
-    padding: 0.5rem 1rem;
+.lesson-header__overview__items span {
+    background-color: var(--primary-text-light_color);
+    padding: 0 0.5rem; /*more background*/
+    margin-right: 1rem; /*distance to text*/
+}
+/*END - lesson-header*/
+
+/*START - self-assessment*/
+.self-assessment {
+    max-width: 32.8rem; /*Kan man göra på annat sätt?*/
+    display: flex;
+    border: 1px solid var(--shade-dark-80_color);
+    border-radius: 4px;
+}
+
+.self-assessment p {
+    width: 8.2rem; /*kan man göra på annat sätt?*/
+    height: 2.125rem;
+    border-right: 1px solid var(--shade-dark-80_color);
+    padding: 0.5rem;
     text-align: center; 
 }
 
-.self-assessment .active{
-    background-color: rgba(20, 22, 25, 0.8);
-    color: white;
+.self-assessment p:nth-child(4) {
+    border: none;
 }
-/*Self assessment END*/
 
-/*Link START*/
-
+.self-assessment--active{
+    background-color: var(--shade-dark-80_color);
+    color: var(--primary-text-light_color);
+}
+/*END - self-assessment*/
 .link {
-    width: 33rem;
-    background-color: rgba(20, 22, 25, 0.08);
+    width: 33rem; /*kan man göra på annat sätt?*/
+    background-color: var(--shade-dark-8_color);
     border-radius: 4px;
     padding: 0.6rem;
     display: flex;
     justify-content: flex-start;
     align-items: center;
     gap: 0.8rem;
-    margin-top: 2rem;
 }
 
 .link a {
+    color: var(--primary-text-dark_color);
     text-decoration: none;
     font-size: 0.9rem;
     font-weight: 400;
     line-height: 1.3rem;
-    color: #141619;
 }
-/*Link END*/
+/*END - link*/
 
-/*Course card START*/
-    .course-card {
-        max-width: 15.3rem;
-        background-color: #F5F6FF;
-        border-bottom-left-radius: 0.5rem;
-        border-bottom-right-radius: 0.5rem;
-        margin-top: 2rem;
-    }
+/*START - course-card*/
+.course-card {
+    max-width: 15.3rem;
+    background-color: var(--foreground-layer-light_color);
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+}
 
-    .course-card__figure {
-        min-height: 200px;
-        background-color: #666a73;
-        border-top-left-radius: 0.5rem;
-        border-top-right-radius: 0.5rem;
-    }
+.course-card__figure {
+    min-height: 200px;
+    background-color: var(--foreground-layer-neutral_color);
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+}
 
-    .main {
-        padding: 1rem;
-    }
-    .course-card__list {
-        list-style-type: none;
-        padding-left: 0;
-        text-align: center;
-        border-radius: 8px;
-        overflow: hidden;
-        margin-top: 2rem;
-    }
+.course-card__info {
+    padding: 1rem;
+}
 
-    .list__option, .list__option--active {
-        font-weight: 600;
-        font-size: 12px;
-        line-height: 18px;
-        background-color: rgba(20, 22, 25, 0.08);
-        padding: 4px 0;
-        margin-bottom: 1px;
-    }
+.course-card__info__list {
+    list-style-type: none;
+    padding-left: 0;
+    text-align: center;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 2rem;
+}
 
-    .list__option--active {
-        background-color: rgba(20, 22, 25, 0.8);
-        color: white;
-    }
-/*Course card END*/
+.list__option, .list__option--active {
+    font-weight: 600;
+    font-size: 0.8rem;
+    line-height: 1.1rem;
+    background-color: var(--shade-dark-8_color);
+    padding: 4px 0;
+    margin-bottom: 1px;
+}
 
-/*Toggle-done START*/
+.list__option--active {
+    background-color: var(--shade-dark-80_color);
+    color: var(--primary-text-light_color);
+}
+/*END - course-card*/
+
+/*START - toggle-done*/
 
 .toggle-done {
-    margin-top: 2rem;
     display: flex;
     gap: 1rem;
 }
-.toggle {
+
+.toggle-done p {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.6rem;
+}
+.toggle__area {
     width: 2.5rem;
     height: 1.3rem;
-    background-color: #141619;
+    background-color: var(--primary-text-dark_color);
     border-radius: 2.5rem;
     display: flex;
     justify-content: flex-end;
-    align-items: center;
     padding: 2px;
 }
 
 .toggle__btn {
     width: 1rem;
     height: 1rem;
-    background-color: rgba(243, 245, 246, 0.94);
+    background-color: var(--primary-text-light_color);
     border-radius: 50%;
 }  
+/*END - toggle-done*/
 
-.toggle__text p {
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 25.6px;
+/*START - button*/
+.button {
+    max-width: 544px;
+    background-color: var(--accent-red_color);
+    color: var(--secondary-text-light_color);
+    border: none;
+    border-radius: 4px;
+    padding: 1rem;
 }
+/*END - button*/
 
-
-/*Toggle-done END*/
+/*START - module-goal*/
+.module-goal--long, .module-goal--medium, .module-goal--short {
+    display: inline-block;
+    background-color: var(--shade-dark-8_color);
+    padding: 0.3rem 0.5rem;
+    border-radius: 4px;
+    color: var(--secondary-text-dark_color);
+}
+/*END - module-goal*/
