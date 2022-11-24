@@ -18,7 +18,7 @@
     <title>Komponentövning</title>
   </head>
   <body>
-    <nav class="userlist-topbar">
+    <nav class="userlist-topbar bread-crums">
       <ul class="nav-links">
         <li><a href="#"></a>Planering</li>
         <li><a href="#"></a>Dashboard</li>
@@ -47,7 +47,7 @@
       </section>
     </header>
 
-    <article class="self-assessment">
+    <article class="self-assessment card-p">
       <p class="self-assessment--active">ej påbörjad</p>
       <p>förstår inte</p>
       <p>förstår delvis</p>
@@ -55,8 +55,8 @@
     </article>
 
     <article class="link">
-      <i class="fa-light fa-video"></i>
-      <a href="#">Super awesome video</a>
+      <img src="images/videocam-outline.png" alt="video icon" />
+      <a class="figcaption" href="#">Super awesome video</a>
     </article>
 
     <article class="course-card">
@@ -66,7 +66,7 @@
           <h4>En awesome kurs i grejer</h4>
           <p>med Lärare Lärarsson</p>
         </section>
-        <ul class="course-card__info__list">
+        <ul class="course-card__info__list card-p">
           <li class="list__option--active">Planera</li>
           <li class="list__option">Kursvy</li>
           <li class="list__option">Översikt</li>
@@ -75,7 +75,7 @@
       </section>
     </article>
 
-    <article class="toggle-done">
+    <article class="toggle-done main-p">
       <div class="toggle__area">
         <div class="toggle__btn"></div>
       </div>
@@ -97,6 +97,51 @@
 
     <article class="module-goal--short">
       <p>Kort modulmål</p>
+    </article>
+
+    <article class="slider-self-assessment">
+      <h4>Lorem ipsum dolor sit amet, consectetu</h4>
+      <section class="slider-self-assessment__slider">
+        <label for="slider">förstår inte</label>
+        <input type="range" id="slider" />
+        <label for="slider">förstår allt</label>
+      </section>
+    </article>
+
+    <article class="lesson">
+      <aside class="lesson__aside"></aside>
+      <main class="lesson__main">
+        <header class="main-header">
+          <h2>Tillgänglighet - en grundläggande rättighet</h2>
+        </header>
+        <article class="module-goal--long">
+          <p>
+            Här står ett väldigt konkret modulmål som kan vara ganska långt
+            beskrivet
+          </p>
+        </article>
+        <section class="main__desc">
+          <p>
+            Responsive web design agile development funding MVP alpha channels.
+            User experience beta branding supply chain social proof scrum
+            project ramen influencer hypotheses termsheet.
+          </p>
+        </section>
+        <article class="link">
+          <img src="images/document-outline.png" alt="doc icon" />
+          <a class="figcaption" href="#">PDF artikel om bananböjning</a>
+        </article>
+        <article class="link">
+          <img src="images/videocam-outline.png" alt="video icon" />
+          <a class="figcaption" href="#">Super awesome video</a>
+        </article>
+        <article class="self-assessment card-p">
+          <p class="self-assessment--active">ej påbörjat</p>
+          <p>har försökt, förstår inte</p>
+          <p>jomen det går ok</p>
+          <p>I am a ninja!</p>
+        </article>
+      </main>
     </article>
   </body>
 </html>

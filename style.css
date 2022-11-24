@@ -5,9 +5,11 @@
     --secondary-text-light_color: rgba(243, 245, 246, 0.72);
     --shade-dark-80_color: rgba(20, 22, 25, 0.8);
     --shade-dark-8_color: rgba(20, 22, 25, 0.08);
+    --shade-light-80_color: rgba(243, 245, 246, 0.8);
     --foreground-layer-neutral_color: #666A73;
     --foreground-layer-light_color: #F5F6FF;
     --container-layer-ash: #E6EBF3;
+    --container-layer-purple: #E0D6FF;
     --accent-red_color: #EA4848;
 }
 
@@ -21,9 +23,10 @@ body {
     height: 100vh;
     font-family: 'Cairo', sans-serif;
     color: var(--primary-text-dark_color);
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
+}
+
+body > * {
+    margin: 2rem;
 }
 
 h2 { /*Section sub header*/
@@ -44,11 +47,32 @@ h4 { /*Card header*/
     line-height: 1.5rem;
 }
 
-p { /*Card p*/
+.card-p {
     font-size: 0.75rem;
     font-weight: 600;
     line-height: 1.1rem;
 }
+
+.main-p {
+    font-size: 1rem;
+    font-weight: 400; 
+    line-height: 1.6rem;
+}
+
+.bread-crums {
+    font-size: 0.75rem;
+    font-weight: 600;
+    line-height: 0.9rem;
+    letter-spacing: 7%;
+}
+
+.figcaption {
+    font-size: 0.9rem;
+    font-weight: 400;
+    line-height: 1.3rem;
+}
+
+
 
 /*Start - userlist-topbar*/
 .userlist-topbar {
@@ -57,10 +81,6 @@ p { /*Card p*/
     border-radius: 6px;
     box-shadow: 0px 6px rgba(0, 0, 0, 0.05);
     padding: 1rem;
-    font-size: 0.75rem;
-    font-weight: 600;
-    line-height: 1rem;
-    letter-spacing: 7%;
     text-transform: uppercase;
 }
 
@@ -123,16 +143,16 @@ p { /*Card p*/
 .self-assessment {
     max-width: 32.8rem; /*Kan man göra på annat sätt?*/
     display: flex;
+    justify-content: space-evenly;
+    text-align: center;
     border: 1px solid var(--shade-dark-80_color);
     border-radius: 4px;
 }
 
-.self-assessment p {
-    width: 8.2rem; /*kan man göra på annat sätt?*/
-    height: 2.125rem;
+ .self-assessment p {
     border-right: 1px solid var(--shade-dark-80_color);
     padding: 0.5rem;
-    text-align: center; 
+    flex:1;
 }
 
 .self-assessment p:nth-child(4) {
@@ -144,6 +164,8 @@ p { /*Card p*/
     color: var(--primary-text-light_color);
 }
 /*END - self-assessment*/
+
+/*START - link*/
 .link {
     width: 33rem; /*kan man göra på annat sätt?*/
     background-color: var(--shade-dark-8_color);
@@ -158,9 +180,6 @@ p { /*Card p*/
 .link a {
     color: var(--primary-text-dark_color);
     text-decoration: none;
-    font-size: 0.9rem;
-    font-weight: 400;
-    line-height: 1.3rem;
 }
 /*END - link*/
 
@@ -193,9 +212,6 @@ p { /*Card p*/
 }
 
 .list__option, .list__option--active {
-    font-weight: 600;
-    font-size: 0.8rem;
-    line-height: 1.1rem;
     background-color: var(--shade-dark-8_color);
     padding: 4px 0;
     margin-bottom: 1px;
@@ -214,11 +230,6 @@ p { /*Card p*/
     gap: 1rem;
 }
 
-.toggle-done p {
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.6rem;
-}
 .toggle__area {
     width: 2.5rem;
     height: 1.3rem;
@@ -239,7 +250,7 @@ p { /*Card p*/
 
 /*START - button*/
 .button {
-    max-width: 544px;
+    width: 544px;
     background-color: var(--accent-red_color);
     color: var(--secondary-text-light_color);
     border: none;
@@ -252,8 +263,35 @@ p { /*Card p*/
 .module-goal--long, .module-goal--medium, .module-goal--short {
     display: inline-block;
     background-color: var(--shade-dark-8_color);
-    padding: 0.3rem 0.5rem;
+    /* padding: 0.3rem 0.5rem; */
+    text-align: center;
     border-radius: 4px;
     color: var(--secondary-text-dark_color);
 }
 /*END - module-goal*/
+
+/*START - slider-self-assessment*/
+.slider-self-assessment {
+    max-width: 34rem;
+    background-color: var(--shade-light-80_color);
+    color: var(--primary-text-dark_color);
+    padding: 1rem;
+}
+
+.slider-self-assessment__slider {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.3rem;
+    font-size: 0.75rem;
+    font-weight: 400;
+    line-height: 1.1rem;
+    
+}
+
+.slider-self-assessment input {
+    accent-color: var(--primary-text-dark_color);
+    width: 22.5rem;
+}
+/*END - slider-self-assessment*/
+
+/*START - lesson*/
